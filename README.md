@@ -51,7 +51,7 @@ npm run lint_f
 
 Login on system and receive token
 ```
-{{base}}/users/login
+localhost:3000/users/login
 
 Type:POST
 Payload: {
@@ -62,7 +62,7 @@ Payload: {
 
 Register on system
 ```
-{{base}}/users/
+localhost:3000/users/
 
 Type:POST
 Payload: {
@@ -75,7 +75,7 @@ Payload: {
 
 Get certain user by id
 ```
-{{base}}/users/4
+localhost:3000/users/4
 
 Type: GET
 Headers: 
@@ -84,7 +84,7 @@ Headers:
 
 Get all users
 ```
-{{base}}/users
+localhost:3000/users
 
 Type: GET
 Headers: 
@@ -95,7 +95,7 @@ Headers:
 
 Create product
 ```
-{{base}}/products/
+localhost:3000/products/
 
 Type: POST
 Payload: {
@@ -109,7 +109,7 @@ Headers:
 
 Get all products
 ```
-{{base}}/products
+localhost:3000/products
 
 Type: GET
 Headers: 
@@ -118,7 +118,7 @@ Headers:
 
 Get product by id
 ```
-{{base}}/products/:id
+localhost:3000/products/:id
 
 Type: GET
 Headers: 
@@ -127,7 +127,7 @@ Headers:
 
 Get products by category
 ```
-{{base}}/products/category/:category
+localhost:3000/products/category/:category
 
 Type: GET
 Headers: 
@@ -138,7 +138,7 @@ Headers:
 
 Create order
 ```
-{{base}}/orders/
+localhost:3000/orders/
 
 Type: POST
 Payload: {
@@ -151,7 +151,7 @@ Headers:
 
 Get all orders
 ```
-{{base}}/orders/
+localhost:3000/orders/
 
 Type: GET
 Headers: 
@@ -161,7 +161,7 @@ Headers:
 
 Get user completed order
 ```
-{{base}}/orders/user/:userId/completedOrders
+localhost:3000/orders/user/:userId/completedOrders
 
 Type: GET
 Headers: 
@@ -171,7 +171,7 @@ Headers:
 
 Get user cart
 ```
-{{base}}/orders/user/:userId/cart
+localhost:3000/orders/user/:userId/cart
 
 Type: GET
 Headers: 
@@ -181,7 +181,7 @@ Headers:
 
 Complete user order
 ```
-{{base}}/orders/user/:userId/completeOrder
+localhost:3000/orders/user/:userId/completeOrder
 
 Type: PUT
 Headers:
@@ -196,7 +196,7 @@ Headers:
 
 Create order-product (inserts item in order)
 ```
-{{base}}/orders-products/
+localhost:3000/orders-products/
 
 Type: POST
 Payload: {
@@ -209,7 +209,7 @@ Headers:
 
 Get all orders full data
 ```
-{{base}}/orders-products/
+localhost:3000/orders-products/
 
 Type: GET
 Headers: 
@@ -218,7 +218,7 @@ Headers:
 
 Get order products
 ```
-{{base}}/orders-products/:orderId
+localhost:3000/orders-products/:orderId
 
 Type: GET
 Headers: 
@@ -227,7 +227,7 @@ Headers:
 
 Get order product full data (checks if item is in order too)
 ```
-{{base}}/orders-products/:orderId/product/:productId
+localhost:3000/orders-products/:orderId/product/:productId
 
 Type: GET
 Headers: 
@@ -236,7 +236,7 @@ Headers:
 
 Get user cart products (Full data)
 ```
-{{base}}/orders-products/user/:userId/cart
+localhost:3000/orders-products/user/:userId/cart
 
 Type: GET
 Headers: 
