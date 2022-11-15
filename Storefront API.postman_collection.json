@@ -1,0 +1,633 @@
+{
+	"info": {
+		"_postman_id": "8d6877a1-7f7c-44cb-a3b0-b8e58c1476a6",
+		"name": "Storefront API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17674162"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ali123\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/users/login",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"users",
+								"login"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "Mohamed",
+									"disabled": true
+								},
+								{
+									"key": "lastname",
+									"value": "Amer",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWxpMTIzNDU2NyIsImlhdCI6MTY2ODQ0Nzg3MX0.NtkXrJh8RFiSD3hnAYYXcgrfecIxzYxwBKRwyAYyA5c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Ali\",\r\n    \"lastname\": \"Omar\",\r\n    \"username\": \"ali12345678\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/users/",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "Mohamed",
+									"disabled": true
+								},
+								{
+									"key": "lastname",
+									"value": "Amer",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get certain user by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWxpMTIzNDU2NyIsImlhdCI6MTY2ODQ0Nzg3MX0.NtkXrJh8RFiSD3hnAYYXcgrfecIxzYxwBKRwyAYyA5c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/users/4",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWxpMTIzNDU2NyIsImlhdCI6MTY2ODQ0Nzg3MX0.NtkXrJh8RFiSD3hnAYYXcgrfecIxzYxwBKRwyAYyA5c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/users/",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"RTX 3050\",\r\n    \"price\":11000,\r\n    \"category\":\"gaming\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/products/",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base}}/products/",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base}}/products/14",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"products",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products by category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base}}/products/category/:category",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"products",
+								"category",
+								":category"
+							],
+							"query": [
+								{
+									"key": "2nd",
+									"value": "pc accessories",
+									"disabled": true
+								},
+								{
+									"key": "1st",
+									"value": "video games",
+									"disabled": true
+								},
+								{
+									"key": "3rd",
+									"value": "gaming",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "category",
+									"value": "gaming"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Create order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"status\": \"ongoing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/orders/",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/orders/",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/orders/9",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"orders",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user completed order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/orders/user/2/completedOrders",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"orders",
+								"user",
+								"2",
+								"completedOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user cart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/orders/user/1/cart",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"orders",
+								"user",
+								"1",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user completed order Copy 2",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/orders/user/1/completeOrder",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"orders",
+								"user",
+								"1",
+								"completeOrder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders-products",
+			"item": [
+				{
+					"name": "Create order-product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\": 9,\r\n    \"product_id\": 13\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/orders-products/",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"orders-products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders full data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/orders-products/",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"orders-products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/orders-products/8",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"orders-products",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order product full data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/orders-products/8/product/14",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"orders-products",
+								"8",
+								"product",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user cart products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBhc3N3b3JkIjoiJDJiJDEwJDQxSFRBVzBjbUNQRkRyUEd3bTRBQy5vVmtBZGowbGh5UU9Ud29JWnVFaTJnOTFISTZaZk9LIn0sImlhdCI6MTY2ODQ0OTM3Mn0.7RGG_cDPLAFHbmNzgETxsVeIHmW5gd0nxmZ_2U-pz1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/orders-products/user/1/cart",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"orders-products",
+								"user",
+								"1",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "localhost:3000/api",
+			"type": "string"
+		}
+	]
+}
