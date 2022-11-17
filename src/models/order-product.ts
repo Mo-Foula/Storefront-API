@@ -1,4 +1,4 @@
-import Client from "../database"
+import Client from '../database'
 
 export type orderProductModel = {
     order_id: number
@@ -8,15 +8,15 @@ export type orderProductModel = {
 
 export class OrderProduct {
     private product_inner_join =
-        "INNER JOIN products AS p ON orders_products.product_id=p.index"
+        'INNER JOIN products AS p ON orders_products.product_id=p.index'
     private order_inner_join =
-        "INNER JOIN orders AS o ON orders_products.order_id=o.id"
+        'INNER JOIN orders AS o ON orders_products.order_id=o.id'
     private user_inner_join = `INNER JOIN users AS u ON o.user_id=u.id`
 
-    private product_fields = "name, price, category"
-    private order_fields = "user_id , status"
-    private user_fields = "username,firstname,lastname"
-    private order_product_fields = "order_id,product_id, ,quantity"
+    private product_fields = 'name, price, category'
+    private order_fields = 'user_id , status'
+    private user_fields = 'username,firstname,lastname'
+    private order_product_fields = 'order_id,product_id, ,quantity'
 
     private product_order_user_fields = `
     order_id,product_id,quantity,name,price,category,user_id,status,username,firstname,lastname`

@@ -1,29 +1,23 @@
-import { OrderProduct, orderProductModel } from "../../models/order-product"
-
+import { OrderProduct } from '../../models/order-product'
+import { modelName, newOrderProduct } from '../data/orders-products.data'
 const orderProduct = new OrderProduct()
 
-const newOrderProduct: orderProductModel = {
-    product_id: 1,
-    order_id: 1,
-    quantity: 2,
-}
 
-const modelName = "order-product"
 
 describe(`${modelName} model`, () => {
-    it("should have an index method", () => {
+    it('should have an index method', () => {
         expect(orderProduct.index).toBeDefined()
     })
 
-    it("should have a show method", () => {
+    it('should have a show method', () => {
         expect(orderProduct.show).toBeDefined()
     })
 
-    it("should have a create method", () => {
+    it('should have a create method', () => {
         expect(orderProduct.create).toBeDefined()
     })
 
-    it("should have a getProdctsByCategory method", () => {
+    it('should have a getProdctsByCategory method', () => {
         expect(orderProduct.showOrderProducts).toBeDefined()
     })
 
@@ -33,9 +27,7 @@ describe(`${modelName} model`, () => {
         // await new Order().create(newOrder)
 
         const result = await orderProduct.create(newOrderProduct)
-        expect(result).toEqual(
-            newOrderProduct
-        )
+        expect(result).toEqual(newOrderProduct)
     })
 
     it(`index method should return a list of ${modelName}`, async () => {

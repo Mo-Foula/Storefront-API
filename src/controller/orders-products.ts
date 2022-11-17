@@ -1,5 +1,5 @@
-import { Request, Response } from "express"
-import { OrderProduct, orderProductModel } from "../models/order-product"
+import { Request, Response } from 'express'
+import { OrderProduct, orderProductModel } from '../models/order-product'
 
 const orderProduct = new OrderProduct()
 
@@ -17,7 +17,7 @@ const show = async (req: Request, res: Response): Promise<void> => {
         const product_id = req.params.productId as unknown as number
         const result = await orderProduct.show({ order_id, product_id })
         if (!result) {
-            res.status(404).send("Order does not have this product")
+            res.status(404).send('Order does not have this product')
             return
         }
         res.json(result)
@@ -34,7 +34,7 @@ const showOrderProducts = async (
         const order_id = req.params.orderId as unknown as number
         const result = await orderProduct.showOrderProducts(order_id)
         if (!result || result.length === 0) {
-            res.status(404).send("Order does not have any products")
+            res.status(404).send('Order does not have any products')
             return
         }
         res.json(result)
@@ -56,11 +56,11 @@ const userCartProducts = async (req: Request, res: Response): Promise<void> => {
         const userId = req.params.userId as unknown as number
         const result = await orderProduct.showUserCartProducts(userId)
         if (!result) {
-            res.status(404).send("User has no cart")
+            res.status(404).send('User has no cart')
             return
         }
         if (result.length === 0) {
-            res.status(404).send("Cart has no products")
+            res.status(404).send('Cart has no products')
             return
         }
         res.json(result)

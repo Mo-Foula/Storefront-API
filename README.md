@@ -48,7 +48,7 @@ npm run lint_f
 #### You can view the exported Postman JSON which contains all the routes
 
 ### **Users routes:**
-
+![ScreenShot](/screenshots/database%20schemas/users%20table.PNG)
 Login on system and receive token
 ```
 localhost:3000/users/login
@@ -92,7 +92,7 @@ Headers:
 ```
 
 ### **Products routes:**
-
+![ScreenShot](/screenshots/database%20schemas/products%20table.PNG)
 Create product
 ```
 localhost:3000/products/
@@ -135,7 +135,7 @@ Headers:
 ```
 
 ### **Orders routes:**
-
+![ScreenShot](/screenshots/database%20schemas/orders%20table.PNG)
 Create order
 ```
 localhost:3000/orders/
@@ -193,8 +193,8 @@ Headers:
 
 
 ### **Orders-products routes:**
-
-Create order-product (inserts item in order)
+![ScreenShot](/screenshots/database%20schemas/orders_products.PNG)
+Create order-product (inserts item in order, here we can insert the quantity too as a number but if it is not provided the item increments the quantity of that product in that order by 1 and if the product is inserted for the first time then the quantity is inserted as 1)
 ```
 localhost:3000/orders-products/
 
@@ -217,6 +217,7 @@ Headers:
 ```
 
 Get order products
+
 ```
 localhost:3000/orders-products/:orderId
 
@@ -226,6 +227,7 @@ Headers:
 ```
 
 Get order product full data (checks if item is in order too)
+
 ```
 localhost:3000/orders-products/:orderId/product/:productId
 
@@ -242,6 +244,48 @@ Type: GET
 Headers: 
     Authorization: Token
 ```
+
+## Environment variables that should exist in .env file:
+```
+## Database PG
+# development
+POSTGRES_HOST=
+POSTGRES_DB=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+
+# test
+POSTGRES_HOST_TEST=
+POSTGRES_DB_TEST=
+POSTGRES_USER_TEST=
+POSTGRES_PASSWORD_TEST=
+
+# Authorization
+BCRYPT_PASSWORD=
+SALT_ROUNDS=
+TOKEN_SECRET=
+
+
+# Environment development or test
+ENV=
+# ENV is development or test
+```
+
+## Connections and ports:
+The project was developed with docker postgres ccontainer
+```
+Node: 3000
+Postgres: 5432
+```
+
+To setup database:
+```
+Launch database service or docker container
+
+db-migrate db:create storefront (The name of DB in .env file)
+db-migrate up
+```
+
 
 ## Getting Started
 

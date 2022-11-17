@@ -1,7 +1,7 @@
-import Client from "../database"
-import bcrypt from "bcrypt"
-import dotenv from "dotenv"
-import jwt from "jsonwebtoken"
+import Client from '../database'
+import bcrypt from 'bcrypt'
+import dotenv from 'dotenv'
+import jwt from 'jsonwebtoken'
 
 export type userModel = {
     id?: number
@@ -16,7 +16,7 @@ dotenv.config()
 const { BCRYPT_PASSWORD: pepper, SALT_ROUNDS: salt, TOKEN_SECRET } = process.env
 
 function encrypt(password: string): string {
-    return bcrypt.hashSync(password + pepper, parseInt(salt ?? ""))
+    return bcrypt.hashSync(password + pepper, parseInt(salt ?? ''))
 }
 
 async function authenticate(
@@ -24,7 +24,7 @@ async function authenticate(
     password: string
 ): Promise<userModel | null | undefined> {
     const conn = await Client.connect()
-    const sql = "SELECT password FROM users WHERE username=($1)"
+    const sql = 'SELECT password FROM users WHERE username=($1)'
 
     const result = await conn.query(sql, [username])
     if (result.rows.length) {
@@ -63,8 +63,8 @@ export class User {
             const hashedPassword = encrypt(password)
 
             const sql =
-                "INSERT INTO users (firstname,lastname,username,password) VALUES($1,$2,$3,$4)  RETURNING *;"
-            
+                'INSERT INTO users (firstname,lastname,username,password) VALUES($1,$2,$3,$4)  RETURNING *;'
+
             try {
                 await conn.query(sql, [
                     firstname,
@@ -86,7 +86,7 @@ export class User {
     async index(): Promise<userModel[]> {
         try {
             const conn = await Client.connect()
-            const sql = "SELECT * FROM users;"
+            const sql = 'SELECT * FROM users;'
             const result = await conn.query(sql)
             conn.release()
             return result.rows
@@ -98,7 +98,7 @@ export class User {
     async show(id: number): Promise<userModel | undefined> {
         try {
             const conn = await Client.connect()
-            const sql = "SELECT * FROM users where id = $1 ;"
+            const sql = 'SELECT * FROM users where id = $1 ;'
             const result = await conn.query(sql, [id])
             conn.release()
             return result.rows[0]

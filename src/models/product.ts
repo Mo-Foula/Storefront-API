@@ -1,4 +1,4 @@
-import Client from "../database"
+import Client from '../database'
 // import { Category, categoryModel } from './categories';
 
 export type productModel = {
@@ -20,7 +20,7 @@ export class Product {
     async index(): Promise<productModel[]> {
         try {
             const conn = await Client.connect()
-            const sql = "SELECT * FROM products;"
+            const sql = 'SELECT * FROM products;'
             const result = await conn.query(sql)
             conn.release()
             return result.rows
@@ -32,7 +32,7 @@ export class Product {
     async show(id: number): Promise<productModel | undefined> {
         try {
             const conn = await Client.connect()
-            const sql = "SELECT * FROM products where index = $1;"
+            const sql = 'SELECT * FROM products where index = $1;'
             const result = await conn.query(sql, [id])
             conn.release()
             return result.rows[0]
@@ -47,7 +47,7 @@ export class Product {
             const { name, price, category } = newProduct
 
             const sql =
-                "INSERT INTO products (name, price, category) VALUES($1, $2, $3) RETURNING *;"
+                'INSERT INTO products (name, price, category) VALUES($1, $2, $3) RETURNING *;'
             const result = await conn.query(sql, [name, price, category])
             conn.release()
             return result.rows[0]
@@ -60,7 +60,7 @@ export class Product {
         try {
             const conn = await Client.connect()
             const numberOfProducts = 5
-            const sql = "SELECT * FROM products where id = $1 ;"
+            const sql = 'SELECT * FROM products where id = $1 ;'
             const result = await conn.query(sql, [numberOfProducts])
             conn.release()
             return result.rows
@@ -72,7 +72,7 @@ export class Product {
     async getProdctsByCategory(category: string): Promise<productModel[]> {
         try {
             const conn = await Client.connect()
-            const sql = "SELECT * FROM products where category = $1 ;"
+            const sql = 'SELECT * FROM products where category = $1 ;'
             const result = await conn.query(sql, [category])
             conn.release()
             return result.rows

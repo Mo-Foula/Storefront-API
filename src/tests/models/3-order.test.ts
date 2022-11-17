@@ -1,44 +1,21 @@
-import { orderModel, Order } from "../../models/order"
-import { userModel } from "../../models/user"
+import { orderModel, Order } from '../../models/order'
+import { newCompletedOrder, newOngoingOrder, modelName } from '../data/orders.data'
 
 const order = new Order()
-
-const newCompletedOrder: orderModel = {
-    id: 1,
-    status: "completed",
-    user_id: 1,
-}
-
-const newOngoingOrder: orderModel = {
-    id: 2,
-    status: "ongoing",
-    user_id: 1,
-}
-
-const newUser: userModel = {
-    id: 1,
-    firstname: "John",
-    lastname: "Doe",
-    password: "password",
-    username: "",
-}
-
-const modelName = "order"
-
 describe(`${modelName} model`, () => {
-    it("should have an index method", () => {
+    it('should have an index method', () => {
         expect(order.index).toBeDefined()
     })
 
-    it("should have a show method", () => {
+    it('should have a show method', () => {
         expect(order.show).toBeDefined()
     })
 
-    it("should have a create method", () => {
+    it('should have a create method', () => {
         expect(order.create).toBeDefined()
     })
 
-    it("should have a userOrdersWithCertainStatus method", () => {
+    it('should have a userOrdersWithCertainStatus method', () => {
         expect(order.userOrdersWithCertainStatus).toBeDefined()
     })
 
@@ -47,15 +24,15 @@ describe(`${modelName} model`, () => {
         await order.create(newCompletedOrder)
         expect(await order.show(newCompletedOrder.id!)).toEqual({
             id: 1,
-            status: "completed",
-            user_id: newUser.id!,
+            status: 'completed',
+            user_id: newCompletedOrder.user_id,
         })
 
         await order.create(newOngoingOrder)
         expect(await order.show(newOngoingOrder.id!)).toEqual({
             id: 2,
-            status: "ongoing",
-            user_id: newUser.id!,
+            status: 'ongoing',
+            user_id: newCompletedOrder.user_id,
         })
     })
 

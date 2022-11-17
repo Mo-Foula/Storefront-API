@@ -1,5 +1,5 @@
-import { Request, Response } from "express"
-import { Order, orderModel } from "../models/order"
+import { Request, Response } from 'express'
+import { Order, orderModel } from '../models/order'
 
 const order = new Order()
 
@@ -15,7 +15,7 @@ const show = async (req: Request, res: Response): Promise<void> => {
     try {
         const id = req.params.id as unknown as number
         const result = await order.show(id)
-        if (!result) res.status(404).send("Order not found")
+        if (!result) res.status(404).send('Order not found')
         res.json(result)
     } catch (err) {
         res.status(400).send(`Error: ${err}`)
@@ -36,7 +36,7 @@ const userCompletedOrders = async (
 ): Promise<void> => {
     try {
         const userId = req.params.userId as unknown as number
-        res.json(await order.userOrdersWithCertainStatus(userId, "completed"))
+        res.json(await order.userOrdersWithCertainStatus(userId, 'completed'))
     } catch (err) {
         res.status(400).send(`Error: ${err}`)
     }
@@ -50,7 +50,7 @@ const userCompleteOrder = async (
         const userId = req.params.userId as unknown as number
 
         const result = await order.completeOrder(userId)
-        if (!result) res.status(404).send("User has no cart")
+        if (!result) res.status(404).send('User has no cart')
         res.json(result)
     } catch (err) {
         res.status(400).send(`Error: ${err}`)
@@ -62,9 +62,9 @@ const userCart = async (req: Request, res: Response): Promise<void> => {
         const userId = req.params.userId as unknown as number
         const result = await order.userOrdersWithCertainStatus(
             userId,
-            "ongoing"
+            'ongoing'
         )
-        if (!result) res.status(404).send("User has no cart")
+        if (!result) res.status(404).send('User has no cart')
         res.json(result)
     } catch (err) {
         res.status(400).send(`Error: ${err}`)

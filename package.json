@@ -37,6 +37,7 @@
     "@types/jasmine": "^3.6.3",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/pg": "^7.14.7",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
@@ -50,6 +51,7 @@
     "jasmine-ts": "^0.3.0",
     "prettier": "2.7.1",
     "prettier-init": "^1.3.0",
+    "supertest": "^6.3.1",
     "ts-node": "^10.8.1",
     "tsc-watch": "^4.2.9",
     "typescript": "^4.8.4"

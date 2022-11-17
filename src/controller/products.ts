@@ -1,5 +1,5 @@
-import { Request, Response } from "express"
-import { Product, productModel } from "../models/product"
+import { Request, Response } from 'express'
+import { Product, productModel } from '../models/product'
 
 const product = new Product()
 
@@ -15,7 +15,7 @@ const show = async (req: Request, res: Response): Promise<void> => {
     try {
         const id = req.params.id as unknown as number
         const result = await product.show(id)
-        if (result === undefined) res.send("Product not found")
+        if (result === undefined) res.send('Product not found')
         res.json(result)
     } catch (err) {
         res.status(400).send(`Error: ${err}`)

@@ -1,5 +1,5 @@
-import dotenv from "dotenv"
-import { Pool } from "pg"
+import dotenv from 'dotenv'
+import { Pool } from 'pg'
 
 dotenv.config()
 
@@ -17,16 +17,16 @@ const {
 
 let pool
 
-if (ENV === "test") {
-    console.log("Testing database")
+if (ENV === 'test') {
+    console.log('Testing database')
     pool = {
         host: POSTGRES_HOST_TEST,
         database: POSTGRES_DB_TEST,
         user: POSTGRES_USER_TEST,
         password: POSTGRES_PASSWORD_TEST,
     }
-} else if (ENV == "development") {
-    console.log("Development database")
+} else if (ENV == 'development') {
+    console.log('Development database')
     pool = {
         host: POSTGRES_HOST,
         database: POSTGRES_DB,

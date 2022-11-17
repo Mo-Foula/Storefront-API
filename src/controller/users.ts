@@ -1,5 +1,5 @@
-import { Request, Response } from "express"
-import { User, userModel } from "../models/user"
+import { Request, Response } from 'express'
+import { User, userModel } from '../models/user'
 
 const user = new User()
 
@@ -24,7 +24,7 @@ const create = async (req: Request, res: Response): Promise<void> => {
     try {
         const token = await user.create(req.body as userModel)
         if (!token) {
-            res.status(400).send("Username already exists")
+            res.status(400).send('Username already exists')
             return
         }
         res.json(token)
@@ -37,7 +37,7 @@ const login = async (req: Request, res: Response): Promise<void> => {
     try {
         const token = await user.login(req.body.username, req.body.password)
         if (!token) {
-            res.status(404).send("Account not found")
+            res.status(404).send('Account not found')
             return
         }
         res.json(token)

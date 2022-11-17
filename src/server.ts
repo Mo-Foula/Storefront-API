@@ -1,11 +1,11 @@
-import express from "express"
-import bodyParser from "body-parser"
+import express from 'express'
+import bodyParser from 'body-parser'
 
-import routes from "./routes/index"
-import db from "./database"
+import routes from './routes/index'
+import db from './database'
 
 const app: express.Application = express()
-const address = "localhost:3000"
+const address = 'localhost:3000'
 // const address: string = "0.0.0.0:3000"
 
 app.use(bodyParser.json())
@@ -14,7 +14,7 @@ async function testDB() {
     try {
         const conn = await db.connect()
         conn.release()
-        console.log("Database connection is ok")
+        console.log('Database connection is ok')
     } catch (err) {
         throw new Error(`Database failed to connect`)
     }
@@ -42,3 +42,5 @@ psql -h 127.0.0.1 -U backend postgres
 createuser postgres --interactive
 psql postgres
 */
+
+export default app
